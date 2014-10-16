@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class CaseController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function servePage()
 	{
-		return View::make('pages.home');
+		return View::make('pages.case');
 	}
 
 }

@@ -11,9 +11,16 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="admin.html">Home</a></li>
-        <li class="active"><a href="addCase.html">Add Case</a></li>
-         <li ><a href="browse.html">Browse</a></li>
+
+        @if (!Auth::check())
+        <li class="{{{ Request::is('login') ? 'active' : '' }}}"><a href="login">Login</a></li>
+        @else
+        <li><a href="{{ URL::to('logout') }}">Logout</a></li>
+        @endif
+        
+        <li class="{{{ Request::is('/') ? 'active' : '' }}}"><a href="/">Home</a></li>
+        <li class="{{{ Request::is('addcase') ? 'active' : '' }}}"><a href="addcase">Add Case</a></li>
+        <li class="{{{ Request::is('browse') ? 'active' : '' }}}"><a href="browse">Browse</a></li>
       </ul>
 
       <form class="navbar-form navbar-right" role="form">

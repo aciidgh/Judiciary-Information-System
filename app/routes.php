@@ -11,27 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('pages.home');
-});
 
-Route::get('/login', function()
-{
-	return View::make('pages.login');
-});
+Route::get('login', array('uses' => 'LoginController@showLogin'));
+Route::post('login', array('uses' => 'LoginController@doLogin'));
 
-Route::get('/addcase', function()
-{
-	return View::make('pages.addcase');
-});
+Route::group(array('before' => 'auth'), function() {
 
-Route::get('/browse', function()
-{
-	return View::make('pages.browse');
-});
+	Route::get('/', 'HomeController@servePage');
+	Route::get('/addcase', 'AddcaseController@servePage');
+	Route::get('/browse', 'BrowseController@servePage');
+	Route::get('/case', 'CaseController@servePage');
+	Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
-Route::get('/case', function()
-{
-	return View::make('pages.case');
 });
