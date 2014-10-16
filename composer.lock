@@ -1,9 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "a8c9bc04a5706bf54f2a6d2e62168e90",
+    "hash": "811ab71d51d5ea4ca9d81399c1e5fe57",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1635,6 +1636,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
-    "platform": [],
+    "prefer-stable": false,
+    "platform": {
+        "ext-sqlite3": "*",
+        "ext-pdo_sqlite": "*"
+    },
     "platform-dev": []
 }
