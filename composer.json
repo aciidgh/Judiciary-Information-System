@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"ext-sqlite3": "*",
-		"ext-pdo_sqlite":"*"
+		"ext-pdo_sqlite":"*",
+		"php" : "5.5"
 	},
 	"autoload": {
 		"classmap": [
