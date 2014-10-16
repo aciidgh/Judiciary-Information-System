@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"ext-sqlite3": "*"
+		"ext-pdo_sqlite":"*"
 	},
 	"autoload": {
 		"classmap": [
