@@ -31,9 +31,17 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">Hearings</div>
-
-
   <table class="table">
+    <tr>
+      <th>Date</th>
+      <th>summary</th>
+    </tr>
+    @foreach($caseModel->hearings as $hearing)
+    <tr>
+      <td width="10">{{$hearing->hearingdate}}</td>
+      <td>{{$hearing->summary}}</td>
+    </tr>
+    @endforeach
   </table>
 </div>
 

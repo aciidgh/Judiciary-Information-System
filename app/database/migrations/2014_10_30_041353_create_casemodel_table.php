@@ -16,6 +16,7 @@ class CreateCasemodelTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('casename', 255);
+			$table->string('status', 255);
 			$table->string('defendant', 255);
 			$table->string('defaddress', 255);
 			$table->string('crimetype', 255);
@@ -24,8 +25,8 @@ class CreateCasemodelTable extends Migration {
 			$table->string('officer', 255);
 			$table->date('arrestdate');
 			$table->string('judge', 255);
-			$table->string('judgement', 255);
-			$table->date('dateclosed');
+			$table->string('judgement', 255)->nullable();
+			$table->date('dateclosed')->nullable();
 			$table->string('prosecutor', 255);
 			$table->date('startdate');
 			$table->date('expectedcomplete');

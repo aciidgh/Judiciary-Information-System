@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 
 	public function servePage()
 	{
+		
 		return View::make('pages.home');
 	}
 

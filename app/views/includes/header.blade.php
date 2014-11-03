@@ -19,7 +19,6 @@
         @endif
         
         <li class="{{{ Request::is('/') ? 'active' : '' }}}"><a href="..//">Home</a></li>
-        <li class="{{{ Request::is('addcase') ? 'active' : '' }}}"><a href="../addcase">Add Case</a></li>
         <li class="{{{ Request::is('browse') ? 'active' : '' }}}"><a href="../browse">Browse</a></li>
       </ul>
 

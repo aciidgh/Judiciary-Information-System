@@ -23,5 +23,11 @@
 	<p>{{ Form::submit('Submit!',array('class' => 'btn btn-lg btn-primary btn-block')) }}</p>
 
 	{{ Form::close() }}
+
+	<div class="alert alert-info" role="alert">
+	<b>Registar</b>  regis:regis <br>
+	<b>Judge</b>  judge:judge<br>
+	<b>Lawyer</b> lawyer:lawyer<br>
+	</div>
 </div>
 @stop
