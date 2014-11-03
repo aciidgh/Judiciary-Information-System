@@ -14,6 +14,14 @@ class UserTableSeeder extends Seeder {
 			'fullname'     => 'regis',
 			'password' => Hash::make('regis'),
 		));
+		User::create(array(
+			'fullname'     => 'lawyer',
+			'password' => Hash::make('lawyer'),
+		));
+		User::create(array(
+			'fullname'     => 'judge',
+			'password' => Hash::make('judge'),
+		));
 	}
 
 }

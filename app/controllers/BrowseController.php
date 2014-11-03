@@ -17,7 +17,8 @@ class BrowseController extends BaseController {
 
 	public function servePage()
 	{
-		return View::make('pages.browse');
+
+		return View::make('pages.browse',array("cases" => CaseModel::all()));
 	}
 
 }

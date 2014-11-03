@@ -6,22 +6,22 @@
 
 <dl class="dl-horizontal well">
   <dt>Case Name</dt>
-  <dd>Foo</dd>
+  <dd>{{ $caseModel->casename }}</dd>
 
   <dt>Defendant</dt>
-  <dd>Bar</dd>
+  <dd>{{ $caseModel->defendant }}</dd>
 
   <dt>Crime Type</dt>
-  <dd>Something</dd>
+  <dd>{{ $caseModel->crimetype }}</dd>
 
 <dt>Location</dt>
-  <dd>Something</dd>
+  <dd>{{ $caseModel->location }}</dd>
 
   <dt>Arresting officer</dt>
-  <dd>Something</dd>
+  <dd>{{ $caseModel->officer }}</dd>
 
   <dt>Start Date</dt>
-  <dd>Something</dd>
+  <dd>{{ $caseModel->startdate }}</dd>
 
 
 <dt>Status</dt>

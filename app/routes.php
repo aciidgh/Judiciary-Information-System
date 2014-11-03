@@ -19,8 +19,11 @@ Route::group(array('before' => 'auth'), function() {
 
 	Route::get('/', 'HomeController@servePage');
 	Route::get('/addcase', 'AddcaseController@servePage');
+
+	Route::post('/addcase', 'AddcaseController@store');
+
 	Route::get('/browse', 'BrowseController@servePage');
-	Route::get('/case', 'CaseController@servePage');
+	Route::get('/case/{id}', 'CaseController@servePage');
 	Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 });

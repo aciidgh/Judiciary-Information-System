@@ -4,30 +4,28 @@
 
 
 <div class="list-group">
-  <a href="#" class="list-group-item">
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Case : 1092328</h3>
-      </div>
-      <div class="panel-body">
-        <span class="label label-success">Closed</span>
-        sup bro
-      </div>
-    </div>
-  </a>
+  @foreach($cases as $case)
+  <a href="case/{{ $case->id }}" class="list-group-item">
 
-
-  <a href="#" class="list-group-item">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="panel-title">Case : 10928</h3>
+    @if ($case->judgement)
+    <div class="panel panel-success">  
+      @else
+      <div class="panel panel-info">
+        @endif
+        <div class="panel-heading">
+          <h3 class="panel-title">Case : {{ $case->casename }}</h3>
+        </div>
+        <div class="panel-body">
+          @if ($case->judgement)
+          <span class="label label-success">Closed</span>
+          @else
+          <span class="label label-success">Open</span>
+          @endif 
+          sup bro
+        </div>
       </div>
-      <div class="panel-body">
-        <span class="label label-info">Open</span>
-        Panel content
-      </div>
-    </div>
-  </a>
-</div>
+    </a>
+    @endforeach
+  </div>
 
-@stop
+  @stop

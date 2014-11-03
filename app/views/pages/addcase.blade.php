@@ -6,48 +6,51 @@
     <div class="panel-body">
       <div class="form-group">
 
-        Case Name:
-        <input type="text" class="form-control"  required autofocus>
-
+        {{ Form::open(array('url' => 'addcase')) }}
+       Case Name:
+        {{ Form::text('casename', null ,array('class' => 'form-control')) }}
+  
         Defendant:
-        <input type="text" class="form-control"  required>
+        {{ Form::text('defendant', null ,array('class' => 'form-control')) }}
 
         Defendant Address:
-        <input type="text" class="form-control"  required>
+        {{ Form::text('defaddress', null ,array('class' => 'form-control')) }}
 
         Crime Type:
-        <input type="text" class="form-control"  required>
+        {{ Form::text('crimetype', null ,array('class' => 'form-control')) }}
 
         Date:
-        <input type="text" class="form-control"  required>
+        {{ Form::text('date', null ,array('placeholder' => 'dd/mm/yy','class' => 'form-control')) }}
 
         Location:
-        <input type="text" class="form-control"  required>
+        {{ Form::text('location', null ,array('class' => 'form-control')) }}
 
         Arresting officer:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('officer', null ,array('class' => 'form-control')) }}
 
         Arresting Date:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('arrestdate', null ,array('placeholder' => 'dd/mm/yy','class' => 'form-control')) }}
 
         Judge:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('judge', null ,array('class' => 'form-control')) }}
 
         Judgement:
-        <input type="text" class="form-control">  
+        {{ Form::text('judgement', null ,array('class' => 'form-control')) }}
 
         Date closed:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('dateclosed', null ,array('placeholder' => 'dd/mm/yy','class' => 'form-control')) }}
 
         Public prosecutor:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('prosecutor', null ,array('class' => 'form-control')) }}
 
         Start Date:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('startdate', null ,array('placeholder' => 'dd/mm/yy','class' => 'form-control')) }}
         Expected complete date:
-        <input type="text" class="form-control"  required>  
+        {{ Form::text('expectedcomplete', null ,array('placeholder' => 'dd/mm/yy','class' => 'form-control')) }}
         <br />
-        <input type="button" class="btn btn-lg btn-primary btn-block" value="Submit"/>
+        {{ Form::submit('Submit!',array('class' => 'btn btn-lg btn-primary btn-block')) }}
+
+        {{ Form::close() }}
       </div>
     </div>
   </div>

@@ -20,4 +20,25 @@ class AddcaseController extends BaseController {
 		return View::make('pages.addcase');
 	}
 
+	public function store()
+	{
+
+		$casemodel = new CaseModel;
+		$casemodel->casename = Input::get('casename');
+        $casemodel->defendant = Input::get('defendant');
+        $casemodel->defaddress = Input::get('defaddress');
+        $casemodel->crimetype = Input::get('crimetype');
+        $casemodel->date = Input::get('date');
+        $casemodel->location = Input::get('location');
+        $casemodel->officer = Input::get('officer');
+        $casemodel->arrestdate = Input::get('arrestdate');
+        $casemodel->judge = Input::get('judge');
+        $casemodel->judgement = Input::get('judgement');
+        $casemodel->dateclosed = Input::get('dateclosed');
+        $casemodel->prosecutor  = Input::get('prosecutor');
+        $casemodel->startdate = Input::get('startdate');
+        $casemodel->expectedcomplete  = Input::get('expectedcomplete');
+        
+        $casemodel->save();
+	}
 }

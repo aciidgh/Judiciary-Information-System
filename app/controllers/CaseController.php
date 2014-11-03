@@ -15,9 +15,10 @@ class CaseController extends BaseController {
 	|
 	*/
 
-	public function servePage()
+	public function servePage($id)
 	{
-		return View::make('pages.case');
+		$caseModel = CaseModel::find($id);
+		return View::make('pages.case',array('caseModel' => $caseModel));
 	}
 
 }
