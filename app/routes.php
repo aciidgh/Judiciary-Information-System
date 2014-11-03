@@ -23,7 +23,10 @@ Route::group(array('before' => 'auth'), function() {
 	Route::post('/addcase', 'AddcaseController@store');
 
 	Route::get('/browse', 'BrowseController@servePage');
+
 	Route::get('/case/{id}', 'CaseController@servePage');
+	Route::post('/case/{id}', 'CaseController@store');
+	
 	Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 });

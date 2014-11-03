@@ -22,7 +22,6 @@ class AddcaseController extends BaseController {
 
 	public function store()
 	{
-
 		$casemodel = new CaseModel;
 		$casemodel->casename = Input::get('casename');
         $casemodel->defendant = Input::get('defendant');
@@ -38,7 +37,6 @@ class AddcaseController extends BaseController {
         $casemodel->prosecutor  = Input::get('prosecutor');
         $casemodel->startdate = Input::get('startdate');
         $casemodel->expectedcomplete  = Input::get('expectedcomplete');
-        
         $casemodel->save();
 	}
 }
