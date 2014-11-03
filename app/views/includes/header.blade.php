@@ -25,17 +25,12 @@
       <form class="navbar-form navbar-right" role="form">
 
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search">
+         <form action="browse">
+          <input type="text" name="search" class="form-control" placeholder="Search">
           <div class="input-group-btn">
-            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Submit <span class="caret"></span></button>
-            <ul class="dropdown-menu dropdown-menu-right" role="menu">
-             <li><a href="#">All</a></li>
-             <li class="divider"></li>
-             <li><a href="#">Resolved</a></li>
-             <li><a href="#">Upcoming</a></li>
-             <li><a href="#">Pending</a></li>
-           </ul>
+            <button type="submit" class="btn btn-default">Submit</button>
          </div><!-- /btn-group -->
+          </form>
        </div><!-- /input-group -->
      </form>
 

@@ -6,7 +6,8 @@
 @else
 
 @if(Auth::user()->type == 'registar')
-<a href="../addcase">Add Case</a>
+<a href="../addcase">Add Case</a> <br>
+<a href="../addaccount">Add Account</a>
 @endif
 
 @endif

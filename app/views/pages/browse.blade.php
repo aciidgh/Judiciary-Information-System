@@ -2,7 +2,13 @@
 @section('content')
 
 @if(Auth::user()->type == 'lawyer')
-<div class="alert alert-info" role="alert">Balance: ${{ Auth::user()->balance }}</div>
+<div class="alert alert-info" role="alert">Balance: $<?php
+
+
+echo Auth::user()->balance;
+if(Auth::user()->balance == 0)
+  echo '<br><b>Please add more balance</b>';
+?></div>
 @endif
 
 <div class="list-group">

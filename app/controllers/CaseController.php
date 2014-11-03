@@ -17,6 +17,15 @@ class CaseController extends BaseController {
 
 	public function servePage($id)
 	{
+		if(Auth::user()->type == 'lawyer')
+		{
+			$user = Auth::user();
+			if($user->balance - 10 >= 0)
+				$user->balance = $user->balance - 10;
+			else
+				return Redirect::to('browse');
+			$user->save();
+		}
 		$caseModel = CaseModel::find($id);
 		return View::make('pages.case',array('caseModel' => $caseModel));
 	}

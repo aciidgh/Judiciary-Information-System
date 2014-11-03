@@ -18,15 +18,18 @@ Route::post('login', array('uses' => 'LoginController@doLogin'));
 Route::group(array('before' => 'auth'), function() {
 
 	Route::get('/', 'HomeController@servePage');
-	Route::get('/addcase', 'AddcaseController@servePage');
 
+	Route::get('/addcase', 'AddcaseController@servePage');
 	Route::post('/addcase', 'AddcaseController@store');
 
-	Route::get('/browse', 'BrowseController@servePage');
+	Route::get('/addaccount', 'AddaccountController@servePage');
+	Route::post('/addaccount', 'AddaccountController@store');
 
+	Route::get('/browse', 'BrowseController@servePage');
+	Route::post('/browse', 'BrowseController@search');
 	Route::get('/case/{id}', 'CaseController@servePage');
 	Route::post('/case/{id}', 'CaseController@store');
-	
+
 	Route::get('logout', array('uses' => 'LoginController@doLogout'));
 
 });

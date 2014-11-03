@@ -17,8 +17,15 @@ class BrowseController extends BaseController {
 
 	public function servePage()
 	{
-
-		return View::make('pages.browse',array("cases" => CaseModel::all()));
+		if(Input::get("search"))
+		{
+			$cases = CaseModel::where('casename', 'LIKE', '%' . Input::get("search").'%')->get();
+		}
+		else
+		{
+			$cases = CaseModel::all();
+		}
+		return View::make('pages.browse',array("cases" => $cases));
 	}
 
 }
