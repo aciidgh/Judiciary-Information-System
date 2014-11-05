@@ -36,6 +36,7 @@ class CaseController extends BaseController {
 		{
 			$caseModel->judgement = Input::get('summary');
 			$caseModel->dateclosed = Input::get('date');
+			$caseModel->status = 'closed';
 			$caseModel->save();
 		}
 		else
@@ -44,7 +45,12 @@ class CaseController extends BaseController {
 			$hearing->summary = Input::get('summary');
 			$hearing->hearingdate = Input::get('date');
 			$hearing->case_id = $id;
-			$hearing->save();
+			$caseModel->status = 'open';
+			if($hearing->summary != '' && $hearing->hearingdate != '')
+			{
+				$hearing->save();
+				$caseModel->save();
+			}
 		}
 		return Redirect::to('case/'.$id);
 		

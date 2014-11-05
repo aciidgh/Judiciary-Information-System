@@ -13,7 +13,7 @@ if(Auth::user()->balance == 0)
 
 <div class="list-group">
   @foreach($cases as $case)
-  <a href="case/{{ $case->id }}" class="list-group-item">
+  <a href="case/{{ $case->id }}" style="text-decoration:none;">
 
     @if ($case->status == 'closed')
       <div class="panel panel-success">  
@@ -29,7 +29,26 @@ if(Auth::user()->balance == 0)
           @else
             <span class="label label-info">Open</span>
           @endif 
-          sup bro
+          <br><br>
+          <dl class="dl-horizontal well">
+            <dt>Case Name</dt>
+            <dd>{{ $case->casename }}</dd>
+
+            <dt>Defendant</dt>
+            <dd>{{ $case->defendant }}</dd>
+
+            <dt>Crime Type</dt>
+            <dd>{{ $case->crimetype }}</dd>
+
+            <dt>Location</dt>
+            <dd>{{ $case->location }}</dd>
+
+            <dt>Arresting officer</dt>
+            <dd>{{ $case->officer }}</dd>
+
+            <dt>Start Date</dt>
+            <dd>{{ $case->startdate }}</dd>
+          </dl>
         </div>
       </div>
     </a>

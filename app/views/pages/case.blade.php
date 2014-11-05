@@ -11,21 +11,53 @@
   <dt>Defendant</dt>
   <dd>{{ $caseModel->defendant }}</dd>
 
+  <dt>Defendant Address</dt>
+  <dd>{{ $caseModel->defaddress }}</dd>
+
+  <dt>Status</dt>
+  <dd>
+    @if ($caseModel->status == 'closed')
+      <span class="label label-success">Closed</span>
+    @else
+      <span class="label label-info">Open</span>
+    @endif 
+  </dd>
+
   <dt>Crime Type</dt>
   <dd>{{ $caseModel->crimetype }}</dd>
 
-<dt>Location</dt>
+  <dt>Crime Date</dt>
+  <dd>{{ $caseModel->date }}</dd>
+
+  <dt>Location</dt>
   <dd>{{ $caseModel->location }}</dd>
 
   <dt>Arresting officer</dt>
   <dd>{{ $caseModel->officer }}</dd>
 
+  <dt>Arrest Date</dt>
+  <dd>{{ $caseModel->arrestdate }}</dd>
+
+  <dt>Judge</dt>
+  <dd>{{ $caseModel->judge }}</dd>
+
+  <dt>Judgement</dt>
+  <dd>{{ $caseModel->judgement }}</dd>
+
+  <dt>Close Date</dt>
+  <dd>{{ $caseModel->dateclosed }}</dd>
+
+  <dt>Prosecutor</dt>
+  <dd>{{ $caseModel->prosecutor }}</dd>
+
   <dt>Start Date</dt>
   <dd>{{ $caseModel->startdate }}</dd>
 
+  <dt>Expected Complete</dt>
+  <dd>{{ $caseModel->expectedcomplete }}</dd>
 
-<dt>Status</dt>
-  <dd><span class="label label-success">Closed</span></dd>
+  <dt>Start Date</dt>
+  <dd>{{ $caseModel->startdate }}</dd>
 </dl>
 
 <div class="panel panel-default">
