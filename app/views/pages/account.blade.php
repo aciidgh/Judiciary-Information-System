@@ -17,8 +17,17 @@
 	</p>
 	{{ Form::close() }}
 
-
-	
-	
+	<dl class="well">
+	@foreach($accounts as $user)
+		<dt>Name : </dt>
+  		<dd>{{ $user->fullname }}</dd>
+  		<dt>Type : </dt>
+  		<dd>{{ $user->type }}</dd>
+  		<dt>Created : </dt>
+  		<dd>{{ $user->created_at }}</dd>
+  		<a href="../addaccount?del={{ $user->fullname }}">Delete</a>
+  		<br><br>
+	@endforeach	
+	</dl>
 </div>
 @stop

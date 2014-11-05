@@ -17,7 +17,14 @@ class AddaccountController extends BaseController {
 
 	public function servePage()
 	{
-		return View::make('pages.account');
+		
+		if(Input::get('del') && Input::get('del') != 'regis')
+		{
+			$user = User::where('fullname','=', Input::get('del'))->get()[0];
+			$user->delete();
+		}
+		$users = User::all();
+		return View::make('pages.account', array("accounts" => $users));
 	}
 
 	public function store()
