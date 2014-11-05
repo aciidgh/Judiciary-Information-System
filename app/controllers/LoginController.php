@@ -46,7 +46,9 @@ class LoginController extends BaseController {
 
 				// validation successful!
 				// redirect them to the secure section or whatever
-					return Redirect::to('/');
+					if(Auth::user()->type == 'registar')
+						return Redirect::to('/');
+					return Redirect::to('/browse');
 
 			} else {	 	
 					return Redirect::to('login');

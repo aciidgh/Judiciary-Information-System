@@ -75,19 +75,21 @@
       <td >{{$hearing->summary}}</td>
     </tr>
     @endforeach
-
+    @if(Auth::user()->type == 'registar')
     <tr>
       {{ Form::open() }}
       <td width="20">{{ Form::text('date', null ,array('placeholder' => 'date','class' => 'form-control')) }}</td>
       <td >{{ Form::text('summary', null ,array('placeholder' => 'summary','class' => 'form-control')) }}</td>
     </tr>
+    @endif
   </table>
   
 </div>
+@if(Auth::user()->type == 'registar')
 <input type="submit" name="add" value="Add Hearing" class = 'btn btn-lg btn-default'>
 <input type="submit" name="close" value="Close Case" class = 'btn btn-lg btn-primary'>
 
 {{ Form::close() }}
-
+@endif
 </div> <!--container.div-->
 @stop

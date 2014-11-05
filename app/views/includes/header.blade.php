@@ -17,15 +17,16 @@
         @else
         <li><a href="{{ URL::to('logout') }}">Logout</a></li>
         @endif
-        
-        <li class="{{{ Request::is('/') ? 'active' : '' }}}"><a href="..//">Home</a></li>
+        @if(Auth::check() AND Auth::user()->type == 'registar')
+        <li class="{{{ Request::is('/') ? 'active' : '' }}}"><a href="../">Home</a></li>
+        @endif
         <li class="{{{ Request::is('browse') ? 'active' : '' }}}"><a href="../browse">Browse</a></li>
       </ul>
 
-      <form class="navbar-form navbar-right" role="form">
+      <form action="../browse" class="navbar-form navbar-right" role="form">
 
         <div class="input-group">
-         <form action="browse">
+         
           <input type="text" name="search" class="form-control" placeholder="Search">
           <div class="input-group-btn">
             <button type="submit" class="btn btn-default">Submit</button>
